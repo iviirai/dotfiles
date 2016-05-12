@@ -1,0 +1,50 @@
+!URxvt*depth: 32 # disabled for ranger to preview pics
+URxvt*scrollColor: #232c31
+!URxvt*font:-misc-tamsynmod-medium-r-normal--17-123-100-100-c-80-iso8859-1
+URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
+!URxvt*boldFont:-misc-tamsynmod-bold-r-normal--17-123-100-100-c-80-iso8859-1
+URxvt*boldFont:-gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
+URxvt*scrollBar: 0
+URxvt*perl-ext-common: 
+URxvt*iso14755: false
+URxvt*iso14755_52: false
+URxvt*termName: rxvt-256color
+URxvt*saveLines: 65535
+URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
+URxvt*urgentOnBell: false
+!URxvt*letterSpace: -1
+
+*.background: #212121
+*.foreground: #7A8F92
+
+! BLK
+*.color0:   #3b3b3b
+*.color8:   #535353
+! RED
+*.color1:   #BA5050
+*.color9:   #FA6B6B
+! GRE
+*.color2:   #3F8238
+*.color10:  #5FB056
+! YEL
+*.color3:   #996318
+*.color11:  #BF7E22
+! BLU
+*.color4:   #5F82A1
+*.color12:  #5A9AD1
+! MAG
+*.color5:   #6E464B
+*.color13:  #6E5155
+! CYA
+*.color6:   #81529C
+*.color14:  #A361C9
+! WHI
+*.color7:   #BCBCAF
+*.color15:  #C1C4BC
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb

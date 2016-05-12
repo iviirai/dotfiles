@@ -1,0 +1,96 @@
+###
+#  history 
+###
+
+#  ignore duplicate lines or lines starting with space
+HISTCONTROL=ignoreboth
+
+#  append to history file, not overwrite it.
+shopt -s histappend
+
+#  set history size
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+###
+#  prompt and completion
+###
+
+source ~/.config/git-prompt/git-prompt.sh
+source ~/.config/git-prompt/git-completion.bash
+
+#  \u user, \w working directory
+
+#  regular
+
+BLACK="\[\e[0;30m\]"
+RED="\[\e[0;31m\]"
+GREEN="\[\e[0;32m\]"
+YELLOW="\[\e[0;33m\]"
+BLUE="\[\e[0;34m\]"
+PURPLE="\[\e[0;35m\]"
+CYAN="\[\e[0;36m\]"
+WHITE="\[\e[0;37m\]"
+
+#  bold
+
+BBLACK="\[\e[1;30m\]"
+BRED="\[\e[1;31m\]"
+BGREEN="\[\e[1;32m\]"
+BYELLOW="\[\e[1;33m\]"
+BBLUE="\[\e[1;34m\]"
+BPURPLE="\[\e[1;35m\]"
+BCYAN="\[\e[1;36m\]"
+BWHITE="\[\e[1;37m\]"
+
+#  color off
+
+COFF="\[\e[0m\]"
+
+#  colorize git_ps1
+
+colorize() 
+{
+	if [[ $EUID == 0 ]]; then
+		PS1='\u@\h:\W \$ '
+	else
+		local is_rep=$(echo `git status 2>&1` | grep -o "Not a git repository" )
+		local INFO="$BGREEN\u$BBLUE@$BGREEN\h:$BCYAN\w"
+		if [[ ${#is_rep} -eq 0 ]]; then
+			local git_status=$(__git_ps1 "%s")
+			local rep_clean=$(echo `git status` | grep -o "nothing to commit")
+			local untracked=$(echo `git status` | grep -o "Untracked")
+			if [[ ${#rep_clean} -ne 0 ]]; then ## repository is clean;
+				local GIT=$BGREEN$git_status=$COFF
+			elif [[ ${#untracked} -ne 0 ]]; then ## untracked file presents
+				local GIT=$BPURPLE$git_status+$COFF
+			else
+				local GIT=$BYELLOW$git_status*$COFF
+			fi
+		else ## not a git repository
+			local GIT=$COFF
+		fi
+		PS1="$INFO $GIT \$ "
+	fi
+}
+
+PROMPT_COMMAND=colorize
+
+###
+#  aliases
+###
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias ll='ls -alF'
+alias la='ls -A'
+
+
+###
+#  ranger
+###
+
+#  not load default rc.conf, load ~/.config/ranger/rc.conf
+export RANGER_LOAD_DEFAULT_RC=FALSE
