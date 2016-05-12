@@ -107,4 +107,13 @@ echo -e "\033[35m########### setup vim ###########\033[0m"
 [ -d $HOME/.vim/bundle/Vundle.vim ] || git clone https://github.com/VundleVim/Vundle.vim.git "$HOME"/.vim/bundle/Vundle.vim
 cp "$DIR"/vimrc "$HOME"/.vimrc
 
+###
+#  setup llvm for You Complete Me
+#  checkout llvm.org/apt
+###
+
+su - root -c "add-apt-repository 'deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.8 main'"
+wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | su - root -c "apt-key add -"
+su - root -c "apt-get update"
+su - root -c "apt-get install clang-3.8 clang-3.8-doc libclang-common-3.8-dev libclang-3.8-dev libclang1-3.8 libclang1-3.8-dbg libllvm-3.8-ocaml-dev libllvm3.8 libllvm3.8-dbg lldb-3.8 llvm-3.8 llvm-3.8-dev llvm-3.8-doc llvm-3.8-examples llvm-3.8-runtime clang-format-3.8 python-clang-3.8 lldb-3.8-dev liblldb-3.8-dbg"
 
