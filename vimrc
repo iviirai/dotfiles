@@ -29,14 +29,14 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = 'powerlineish'
-set tabstop=8						"use tab which 8 spaces long
+set tabstop=8		"use tab which 8 spaces long
 set shiftwidth=8
-set noexpandtab 
-set cindent 						"c-style indent
-set hlsearch 						"highlight search
-set wrapscan 						"when to the bottom,then back to top
-set incsearch 						"use increment search
-set showcmd 						"show cmd you entered
+set noexpandtab
+set cindent 		"c-style indent
+set hlsearch 		"highlight search
+set wrapscan 		"when to the bottom,then back to top
+set incsearch 		"use increment search
+set showcmd 		"show cmd you entered
 set ruler
 set cursorline
 "set cursorline if seted every window will hight cursor line at the same time
