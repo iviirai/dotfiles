@@ -29,6 +29,18 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = 'powerlineish'
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+" no diagnostic information
+let g:ycm_enable_diagnostic_signs = 0
+" which filetype should turned on
+let g:ycm_filetype_whitelist = { 	
+	\ 'cpp': 1,
+	\ 'c': 1
+	\}
+" set to 99, so identifier completion engine will not be triggered just 
+" leaves semantic engine. default is 2.
+" let g:ycm_min_num_of_chars_for_completion = 99
+set completeopt=menuone
 set tabstop=8		"use tab which 8 spaces long
 set shiftwidth=8
 set noexpandtab
@@ -57,6 +69,12 @@ hi Visual cterm=NONE ctermbg=darkyellow ctermfg=black
 " autocmd Filetype cc,hh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufNewFile,BufRead *.c,*.h setlocal noexpandtab tabstop=8 shiftwidth=8
 autocmd BufNewFile,BufRead *.cc,*.hh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+
+" set different ycm_extra_conf.py for c and c++ source files
+" typically it should be let b:variable, but here is a exception.
+autocmd BufNewFile,BufRead *.c,*.h let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_c.py'
+autocmd BufNewFile,BufRead *.cc,*.hh let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_cc.py'
 
 "map some useful keys
 "include no highlight search(not perminant turnoff)
