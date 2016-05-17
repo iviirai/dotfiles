@@ -123,3 +123,17 @@ su - root -c "apt-get install python3-dev"
 
 cp "$DIR"/vim/ycm_extra_conf_c.py "$HOME"/.ycm_extra_conf_c.py
 cp "$DIR"/vim/ycm_extra_conf_cc.py "$HOME"/.ycm_extra_conf_cc.py
+
+###
+#  setup monsterwm
+###
+
+# prepare libs
+su - root -c "apt-get install libxinerama-dev"
+su - root -c "apt-get install libx11-dev"
+
+
+###
+#  setup compton
+###
+cp "$DIR"/compton.conf .config/compton.conf
