@@ -137,3 +137,16 @@ su - root -c "apt-get install libx11-dev"
 #  setup compton
 ###
 cp "$DIR"/compton.conf "$HOME"/.config/compton.conf
+
+
+###
+#  setup ss
+###
+if [[ $(which pip) == "" ]]; then
+	su - root -c "apt-get install python-pip"
+	su - root -c "pip install shadowsocks"
+	su - root -c "ln -s $HOME/.local/bin/sslocal /usr/local/bin/sslocal"
+fi
+
+if [[ -e "$HOME"/.shadowsocks.json ]]; then
+	cp "$DIR"/shadowsocks.json "$HOME"/.shadowsocks.json
