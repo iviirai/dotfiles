@@ -94,7 +94,7 @@ fi
 
 echo -e "\033[35m########### setup bash ###########\033[0m"
 cp "$DIR"/bash/bashrc $HOME/.bashrc
-if [ -d "$HOME/.config/git-prompt" ]; then
+if [ ! -d "$HOME/.config/git-prompt" ]; then
 	mkdir "$HOME/.config/git-prompt"
 	wget -P "$HOME/.config/git-prompt" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 	wget -P "$HOME/.config/git-prompt" https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
@@ -114,12 +114,12 @@ cp "$DIR"/vim/vimrc "$HOME"/.vimrc
 #  checkout llvm.org/apt
 ###
 
-su - root -c "add-apt-repository 'deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.8 main'"
-wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
-su - root -c "apt-get update"
-su - root -c "apt-get install clang-3.8 clang-3.8-doc libclang-common-3.8-dev libclang-3.8-dev libclang1-3.8 libclang1-3.8-dbg libllvm-3.8-ocaml-dev libllvm3.8 libllvm3.8-dbg lldb-3.8 llvm-3.8 llvm-3.8-dev llvm-3.8-doc llvm-3.8-examples llvm-3.8-runtime clang-format-3.8 python-clang-3.8 lldb-3.8-dev liblldb-3.8-dbg"
-su - root -c "apt-get install cmake"
-su - root -c "apt-get install python3-dev"
+# su - root -c "add-apt-repository 'deb http://llvm.org/apt/trusty/ llvm-toolchain-trusty-3.8 main'" wget -O - http://llvm.org/apt/llvm-snapshot.gpg.key | sudo apt-key add -
+# su - root -c "apt-get update"
+# su - root -c "apt-get install clang-3.8 clang-3.8-doc libclang-common-3.8-dev libclang-3.8-dev libclang1-3.8 libclang1-3.8-dbg libllvm-3.8-ocaml-dev libllvm3.8 libllvm3.8-dbg lldb-3.8 llvm-3.8 llvm-3.8-dev llvm-3.8-doc llvm-3.8-examples llvm-3.8-runtime clang-format-3.8 python-clang-3.8 lldb-3.8-dev liblldb-3.8-dbg"
+su - root -c "apt-get install build-essential cmake"
+su - root -c "apt-get install python-dev python3-dev"
+su - root -c "ldconfig"
 
 cp "$DIR"/vim/ycm_extra_conf_c.py "$HOME"/.ycm_extra_conf_c.py
 cp "$DIR"/vim/ycm_extra_conf_cc.py "$HOME"/.ycm_extra_conf_cc.py
@@ -139,4 +139,17 @@ cp "$DIR"/superkey_map "$HOME"/.config/superkey_map
 ###
 #  setup compton
 ###
-cp "$DIR"/compton.conf .config/compton.conf
+cp "$DIR"/compton.conf "$HOME"/.config/compton.conf
+
+
+###
+#  setup ss
+###
+if [[ $(which pip) == "" ]]; then
+	su - root -c "apt-get install python-pip"
+	su - root -c "pip install shadowsocks"
+	su - root -c "ln -s $HOME/.local/bin/sslocal /usr/local/bin/sslocal"
+fi
+
+if [[ -e "$HOME"/.shadowsocks.json ]]; then
+	cp "$DIR"/shadowsocks.json "$HOME"/.shadowsocks.json
