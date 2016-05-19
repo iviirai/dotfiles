@@ -132,6 +132,9 @@ cp "$DIR"/vim/ycm_extra_conf_cc.py "$HOME"/.ycm_extra_conf_cc.py
 su - root -c "apt-get install libxinerama-dev"
 su - root -c "apt-get install libx11-dev"
 
+# map superkey
+cp "$DIR"/superkey_map "$HOME"/.config/superkey_map
+
 
 ###
 #  setup compton
