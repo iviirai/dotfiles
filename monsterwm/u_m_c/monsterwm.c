@@ -328,7 +328,8 @@ void centerwindow(void) {
     if (!d->curr->isfloat && !d->curr->istrans) { d->curr->isfloat = True; tile(d, m); }
     XRaiseWindow(dis, d->curr->win);
     XMoveWindow(dis, d->curr->win, m->x + (m->w - wa.width)/2 - BORDER_WIDTH,
-            m->y + (m->h - wa.height)/2 - BORDER_WIDTH + (TOP_PANEL && d->sbar ? PANEL_HEIGHT : 0));
+            m->y + (m->h - wa.height - (TOP_PANEL && d->sbar ? PANEL_HEIGHT : 0))/2 - BORDER_WIDTH 
+            + (TOP_PANEL && d->sbar ? PANEL_HEIGHT : 0));
 }
 
 /**
