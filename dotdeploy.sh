@@ -139,7 +139,9 @@ cp "$DIR"/superkey_map "$HOME"/.config/superkey_map
 if [[ ! -d "$HOME"/.config/monsterwm ]]; then
 	mkdir "$HOME"/.config/monsterwm
 	cp "$DIR"/monsterwm/wm.sh "$HOME"/.config/monsterwm
+	chmod +x "$HOME"/.config/monsterwm/wm.sh
 	cp "$DIR"/monsterwm/panel.sh "$HOME"/.config/monsterwm
+	chmod +x "$HOME"/.config/monsterwm/panel.sh
 fi
 
 
