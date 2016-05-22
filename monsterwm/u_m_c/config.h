@@ -77,7 +77,7 @@ static const AppRule rules[] = { \
  * custom commands
  * must always end with ', NULL };'
  */
-static const char *termcmd[] = { "xclock", NULL };
+static const char *termcmd[] = { "urxvt", NULL };
 static const char *menucmd[] = { "dmenu_run", "-dim", "0.6", "-fn", "-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1", "-h", "22", "-l", "16", "-w", "200", "-sb", "#823232", NULL };
 
 #define MONITORCHANGE(K,N) \

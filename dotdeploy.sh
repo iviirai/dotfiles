@@ -135,6 +135,13 @@ su - root -c "apt-get install libx11-dev"
 # map superkey
 cp "$DIR"/superkey_map "$HOME"/.config/superkey_map
 
+# lemonbar helper scripts
+if [[ ! -d "$HOME"/.config/monsterwm ]]; then
+	mkdir "$HOME"/.config/monsterwm
+	cp "$DIR"/monsterwm/wm.sh "$HOME"/.config/monsterwm
+	cp "$DIR"/monsterwm/panel.sh "$HOME"/.config/monsterwm
+fi
+
 
 ###
 #  setup compton
