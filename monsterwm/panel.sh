@@ -4,14 +4,14 @@
 #enum { TILE, MONOCLE, BSTACK, GRID, FIBONACCI, DUALSTACK, EQUAL, MODES };
 
 
-# monitorid:desktopid:clientcount:layoutmode:desktopfocused:urgent:windowtitle
+# monitorid:monitorfocused:desktopid:clientcount:layoutmode:desktopfocused:urgent
 #*   the monitor id
-#*   the desktop number/id
+#*   monitor focused or not
+#*   the desktop id
 #*   the desktop's client count
 #*   the desktop's tiling layout mode/id
 #*   whether the desktop is the current focused (1) or not (0)
 #*   whether any client in that desktop has received an urgent hint
-#*   and the current window's title
  
 icon_mpc="  "
 icon_vol="  "
