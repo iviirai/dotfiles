@@ -5,19 +5,14 @@
 
 
 # monitorid:desktopid:clientcount:layoutmode:desktopfocused:urgent:windowtitle
- #*   the desktop number/id
- #*   the desktop's client count
- #*   the desktop's tiling layout mode/id
- #*   whether the desktop is the current focused (1) or not (0)
- #*   whether any client in that desktop has received an urgent hint
- #*   and the current window's title
+#*   the monitor id
+#*   the desktop number/id
+#*   the desktop's client count
+#*   the desktop's tiling layout mode/id
+#*   whether the desktop is the current focused (1) or not (0)
+#*   whether any client in that desktop has received an urgent hint
+#*   and the current window's title
  
-#id
-#count
-#layout
-#focused
-#urgent
-#title
 icon_mpc="  "
 icon_vol="  "
 icon_date="  "
@@ -25,10 +20,6 @@ icon_title="  "
 icon_lt="" # left triangle
 icon_ra="" # right arrow
 icon_la="" # left arrow
-
-
-
-
 
 curtag="FF823232" # background color of current tag
 acttag="FF917154" # background color of active tag
@@ -38,6 +29,7 @@ deftag="FFCC6600" # background color of default tag
 titlecolor="FF000000" # main color of title bar
 
 names=( "term" "web" "img" "misc" "alpha" )
+moncnt=2 # number of monitors
 
 function lineout()
 {
@@ -61,16 +53,18 @@ function lineout()
 
 	while :; do
 		read  -r info
-		if [[ -n "$info" && "$info" != "$prev" && "$info" =~ ^([0-9]+:){4} ]]; then
+		if [[ -n "$info" && "$info" != "$prev" && "$info" =~ ^([0-9]+:){5} ]]; then
 			prev="$info"
 		fi
 		read -ra desktops <<< "$prev"
-		for i in {0..4}; do
-			id=${desktops[$i]:0:1}
-			count=${desktops[$i]:2:1}
-			layout=${desktops[$i]:4:1}
-			focused=${desktops[$i]:6:1}
-			urgent=${desktops[$i]:8:1}
+		# number of desktops will be different since using multihead
+		for i in $(seq 0 $[${#names[@]}*$moncnt-1]); do
+			mid=${desktops[$i]:0:1}
+			id=${desktops[$i]:2:1}
+			count=${desktops[$i]:4:1}
+			layout=${desktops[$i]:6:1}
+			focused=${desktops[$i]:8:1}
+			urgent=${desktops[$i]:10:1}
 			if [ "$focused" -ne 0 ]; then
 				fg[$i]="%{F-}"
 				bg[$i]="%{B-}"
