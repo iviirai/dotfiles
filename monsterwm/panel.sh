@@ -4,6 +4,7 @@
 #enum { TILE, MONOCLE, BSTACK, GRID, FIBONACCI, DUALSTACK, EQUAL, MODES };
 
 
+# monitorid:desktopid:clientcount:layoutmode:desktopfocused:urgent:windowtitle
  #*   the desktop number/id
  #*   the desktop's client count
  #*   the desktop's tiling layout mode/id
@@ -40,7 +41,7 @@ names=( "term" "web" "img" "misc" "alpha" )
 
 function lineout()
 {
-	awk -W interactive '$0 != l { print; l=$0; fflush(); }' "$@"
+	awk -W interactive '$0 != l { print; l = $0; system(); }' "$@"
 }
 
 
