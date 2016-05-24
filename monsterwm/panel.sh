@@ -33,7 +33,7 @@ moncnt=2 # number of monitors
 
 function lineout()
 {
-	awk -W interactive '$0 != l { print; l = $0; system(); }' "$@"
+	awk -W interactive '$0 != l { print; l = $0; fflush(); }' "$@"
 }
 
 
@@ -91,7 +91,7 @@ function lineout()
 				ub[$i]="%{-u}"
 				ue[$i]="%{-u}"
 			fi
-			if [ "$mfocused" -eq 1 ]; then
+			if [ "$mfocused" == "1" ]; then
 				focused_monitor=$mid
 			fi
 				
@@ -110,9 +110,10 @@ function lineout()
 			;;
 		esac
 		for i in $(seq 0 $[$moncnt-1]); do # monitors
-			for j in $(seq 0 ${#names[@]}); do
+			m_status[$i]=""
+			for j in $(seq 0 $[${#names[@]}-1]); do
 				index=$[$j+$i*${#names[@]}]
-				m_status[i]+=" ${fg[$index]}${bg[$index]}${ul[$index]}${ub[$index]} ${names[$j]} ${ue[$index]}" 
+				m_status[$i]+=" ${fg[$index]}${bg[$index]}${ul[$index]}${ub[$index]} ${names[$j]} ${ue[$index]}" 
 			done
 		done
 		echo "${m_status[$focused_monitor]}"
@@ -132,7 +133,7 @@ function lineout()
 			tags=$line
 			;;
 		esac
-		if [[ -n "$tags" && -n "$vol" && -n "$date" ]]; then
+		if [[ -n "$tags" || -n "$vol" || -n "$date" ]]; then
 			echo "%{l} $tags%{c}$monfg$monbg%{+u}$monname%{-u}%{B-}%{F-}%{r}%{F#$curtag}%{U#$curtag}%{+u}$icon_vol%{-u}%{B-}%{F-} $vol%% %{F#$nemptag}%{U#$nemptag}%{+u}$icon_date%{-u}%{B-}%{F-} $date "
 		fi
 	done
