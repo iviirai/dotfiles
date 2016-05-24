@@ -96,12 +96,17 @@ function lineout()
 			fi
 				
 		done
+		# set name foreground background underline color of monitor focused
 		case $focused_monitor in
-		0)	FG=
-			BG=
+		0)	monfg="%{F-}"
+			monbg="%{B-}"
+			monul="%{U#$curtag}"
+			monname=INFINITE
 			;;
-		1)	FG=
-			BG=
+		1)	monfg="%{F-}"
+			monbg="%{B-}"
+			monul="%{U#$nemptag}"
+			monname=WORLD
 			;;
 		esac
 		for i in $(seq 0 $[$moncnt-1]); do # monitors
@@ -110,9 +115,7 @@ function lineout()
 				m_status[i]+=" ${fg[$index]}${bg[$index]}${ul[$index]}${ub[$index]} ${names[$j]} ${ue[$index]}" 
 			done
 		done
-		echo "$m_status[$focused_monitor]"
-
-		echo  " ${fg[0]}${bg[0]}${ul[0]}${ub[0]} ${names[0]} ${ue[0]} ${fg[1]}${bg[1]}${ul[1]}${ub[1]} ${names[1]} ${ue[1]} ${fg[2]}${bg[2]}${ul[2]}${ub[2]} ${names[2]} ${ue[2]} ${fg[3]}${bg[3]}${ul[3]}${ub[3]} ${names[3]} ${ue[3]} ${fg[4]}${bg[4]}${ul[4]}${ub[4]} ${names[4]} ${ue[4]}"
+		echo "${m_status[$focused_monitor]}"
 	done
 
 } 2> /dev/null | {
@@ -130,7 +133,7 @@ function lineout()
 			;;
 		esac
 		if [[ -n "$tags" && -n "$vol" && -n "$date" ]]; then
-			echo "%{l} $tags%{r}%{F#$curtag}%{U#$curtag}%{+u}$icon_vol%{-u}%{B-}%{F-} $vol%% %{F#$nemptag}%{U#$nemptag}%{+u}$icon_date%{-u}%{B-}%{F-} $date "
+			echo "%{l} $tags%{c}$monfg$monbg%{+u}$monname%{-u}%{B-}%{F-}%{r}%{F#$curtag}%{U#$curtag}%{+u}$icon_vol%{-u}%{B-}%{F-} $vol%% %{F#$nemptag}%{U#$nemptag}%{+u}$icon_date%{-u}%{B-}%{F-} $date "
 		fi
 	done
 } 2> /dev/null | lemonbar -d -p -g 1600x22+1080 -u 4 -B '#99212121' -F '#FFA8A8A8' -f '-gohu-gohufont-medium-r-*-*-14-*-*-*-*-*-*-*'
