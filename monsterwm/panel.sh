@@ -60,11 +60,12 @@ function lineout()
 		# number of desktops will be different since using multihead
 		for i in $(seq 0 $[${#names[@]}*$moncnt-1]); do
 			mid=${desktops[$i]:0:1}
-			id=${desktops[$i]:2:1}
-			count=${desktops[$i]:4:1}
-			layout=${desktops[$i]:6:1}
-			focused=${desktops[$i]:8:1}
-			urgent=${desktops[$i]:10:1}
+			mfocused=${desktops[$i]:2:1}
+			id=${desktops[$i]:4:1}
+			count=${desktops[$i]:6:1}
+			layout=${desktops[$i]:8:1}
+			focused=${desktops[$i]:10:1}
+			urgent=${desktops[$i]:12:1}
 			if [ "$focused" -ne 0 ]; then
 				fg[$i]="%{F-}"
 				bg[$i]="%{B-}"
@@ -92,6 +93,9 @@ function lineout()
 			fi
 				
 		done
+		for i in $(seq 0 $[$moncnt-1]); do # monitors
+			for j in $(seq 0 ${#names[@]}); do
+				m_status[i]=${m_status[i]}" ${fg[$[$j+$i*${#names[@]}]]} 
 		echo  " ${fg[0]}${bg[0]}${ul[0]}${ub[0]} ${names[0]} ${ue[0]} ${fg[1]}${bg[1]}${ul[1]}${ub[1]} ${names[1]} ${ue[1]} ${fg[2]}${bg[2]}${ul[2]}${ub[2]} ${names[2]} ${ue[2]} ${fg[3]}${bg[3]}${ul[3]}${ub[3]} ${names[3]} ${ue[3]} ${fg[4]}${bg[4]}${ul[4]}${ub[4]} ${names[4]} ${ue[4]}"
 	done
 
