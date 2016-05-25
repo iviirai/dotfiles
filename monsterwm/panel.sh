@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #enum { RESIZE, MOVE };
-#enum { TILE, MONOCLE, BSTACK, GRID, FIBONACCI, DUALSTACK, EQUAL, MODES };
+#enum { TILE, MONOCLE, BSTACK, GRID, FLOAT, MODES };
 
 
 # monitorid:monitorfocused:desktopid:clientcount:layoutmode:desktopfocused:urgent
@@ -58,6 +58,7 @@ function lineout()
 		fi
 		read -ra desktops <<< "$prev"
 		# number of desktops will be different since using multihead
+		focused_monitor=0
 		for i in $(seq 0 $[${#names[@]}*$moncnt-1]); do
 			mid=${desktops[$i]:0:1}
 			mfocused=${desktops[$i]:2:1}
@@ -91,7 +92,7 @@ function lineout()
 				ub[$i]="%{-u}"
 				ue[$i]="%{-u}"
 			fi
-			if [ "$mfocused" == "1" ]; then
+			if [[ "$mfocused" == "1" ]]; then
 				focused_monitor=$mid
 			fi
 				
@@ -108,7 +109,10 @@ function lineout()
 			monul="%{U#$nemptag}"
 			monname=WORLD
 			;;
+		*)	monname=WRONG
+			;;
 		esac
+		mon="$monfg$monbg%{+u}$monul$monname%{-u}$monbg$monfg"
 		for i in $(seq 0 $[$moncnt-1]); do # monitors
 			m_status[$i]=""
 			for j in $(seq 0 $[${#names[@]}-1]); do
@@ -116,7 +120,7 @@ function lineout()
 				m_status[$i]+=" ${fg[$index]}${bg[$index]}${ul[$index]}${ub[$index]} ${names[$j]} ${ue[$index]}" 
 			done
 		done
-		echo "${m_status[$focused_monitor]}"
+		echo "$mon ${m_status[$focused_monitor]}"
 	done
 
 } 2> /dev/null | {
@@ -130,11 +134,12 @@ function lineout()
 			vol=${cmd[1]}
 			;;
 		*)  
-			tags=$line
+			monitor=${cmd[0]}
+			tags=${cmd[@]:1}
 			;;
 		esac
-		if [[ -n "$tags" || -n "$vol" || -n "$date" ]]; then
-			echo "%{l} $tags%{c}$monfg$monbg%{+u}$monname%{-u}%{B-}%{F-}%{r}%{F#$curtag}%{U#$curtag}%{+u}$icon_vol%{-u}%{B-}%{F-} $vol%% %{F#$nemptag}%{U#$nemptag}%{+u}$icon_date%{-u}%{B-}%{F-} $date "
+		if [[ -n "$tags" && -n "$vol" && -n "$date" ]]; then
+			echo "%{l} $tags%{c}$monitor%{r}%{F#$curtag}%{U#$curtag}%{+u}$icon_vol%{-u}%{B-}%{F-} $vol% %{F#$nemptag}%{U#$nemptag}%{+u}$icon_date%{-u}%{B-}%{F-} $date "
 		fi
 	done
 } 2> /dev/null | lemonbar -d -p -g 1600x22+1080 -u 4 -B '#99212121' -F '#FFA8A8A8' -f '-gohu-gohufont-medium-r-*-*-14-*-*-*-*-*-*-*'
