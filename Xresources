@@ -14,33 +14,50 @@ URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
 URxvt*urgentOnBell: false
 !URxvt*letterSpace: -1
 
-*.background: #212121
-*.foreground: #7A8F92
+#define base00 #2b303b
+#define base01 #343d46
+#define base02 #4f5b66
+#define base03 #65737e
+#define base04 #a7adba
+#define base05 #c0c5ce
+#define base06 #dfe1e8
+#define base07 #eff1f5
+#define base08 #bf616a
+#define base09 #d08770
+#define base0A #ebcb8b
+#define base0B #a3be8c
+#define base0C #96b5b4
+#define base0D #8fa1b3
+#define base0E #b48ead
+#define base0F #ab7967
+
+URxvt.background: base05
+URxvt.foreground: base05
 
 ! BLK
-*.color0:   #3b3b3b
-*.color8:   #535353
+URxvt.color0:   base00
+URxvt.color8:   base03
 ! RED
-*.color1:   #BA5050
-*.color9:   #FA6B6B
+URxvt.color1:   base08
+URxvt.color9:   base08
 ! GRE
-*.color2:   #3F8238
-*.color10:  #5FB056
+URxvt.color2:   base0B
+URxvt.color10:  base0B
 ! YEL
-*.color3:   #996318
-*.color11:  #BF7E22
+URxvt.color3:   base0A
+URxvt.color11:  base0A
 ! BLU
-*.color4:   #5F82A1
-*.color12:  #5A9AD1
+URxvt.color4:   base0D
+URxvt.color12:  base0D
 ! MAG
-*.color5:   #6E464B
-*.color13:  #6E5155
+URxvt.color5:   base0E
+URxvt.color13:  base0E
 ! CYA
-*.color6:   #81529C
-*.color14:  #A361C9
+URxvt.color6:   base0C
+URxvt.color14:  base0C
 ! WHI
-*.color7:   #BCBCAF
-*.color15:  #C1C4BC
+URxvt.color7:   base05
+URxvt.color15:  base07
 
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
