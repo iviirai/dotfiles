@@ -51,6 +51,11 @@ set incsearch 		"use increment search
 set showcmd 		"show cmd you entered
 set ruler
 set cursorline
+
+" set color scheme
+"set background=dark
+colorscheme Tomorrow-Night
+
 "set cursorline if seted every window will hight cursor line at the same time
 "set cursorcolumn
 hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=darkred guifg=white
