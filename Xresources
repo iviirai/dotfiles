@@ -14,33 +14,33 @@ URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
 URxvt*urgentOnBell: false
 !URxvt*letterSpace: -1
 
-*.background: #212121
-*.foreground: #7A8F92
+URxvt*background: #1D1F21
+URxvt*foreground: #C5C8C6
 
 ! BLK
-*.color0:   #3b3b3b
-*.color8:   #535353
+URxvt*color0:   #282A2E
+URxvt*color8:   #373B41
 ! RED
-*.color1:   #BA5050
-*.color9:   #FA6B6B
+URxvt*color1:   #A54242
+URxvt*color9:   #CC6666
 ! GRE
-*.color2:   #3F8238
-*.color10:  #5FB056
+URxvt*color2:   #8C9440
+URxvt*color10:  #B5BD68
 ! YEL
-*.color3:   #996318
-*.color11:  #BF7E22
+URxvt*color3:   #DE935F
+URxvt*color11:  #F0C674
 ! BLU
-*.color4:   #5F82A1
-*.color12:  #5A9AD1
+URxvt*color4:   #5F819D
+URxvt*color12:  #81A2BE
 ! MAG
-*.color5:   #6E464B
-*.color13:  #6E5155
+URxvt*color5:   #85678F
+URxvt*color13:  #B294BB
 ! CYA
-*.color6:   #81529C
-*.color14:  #A361C9
+URxvt*color6:   #5E8D87
+URxvt*color14:  #8ABEB7
 ! WHI
-*.color7:   #BCBCAF
-*.color15:  #C1C4BC
+URxvt*color7:   #6C7A80
+URxvt*color15:  #C5C8C6
 
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
@@ -48,3 +48,42 @@ Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
+
+! ----------------------------------------------------------------------
+! ! File: gruvbox-urxvt256.xresources
+! ! Description: Retro groove colorscheme generalized
+! ! Author: morhetz <morhetz@gmail.com>
+! ! Source: https://github.com/morhetz/gruvbox-generalized
+! ! Last Modified: 13 Dec 2013
+! ! --------------------------------------------------------------------
+
+URxvt.color24:  #076678
+URxvt.color66:  #427b58
+URxvt.color88:  #9d0006
+URxvt.color96:  #8f3f71
+URxvt.color100: #79740e
+URxvt.color108: #8ec07c
+URxvt.color109: #83a598
+URxvt.color130: #af3a03
+URxvt.color136: #b57614
+URxvt.color142: #b8bb26
+URxvt.color167: #fb4934
+URxvt.color175: #d3869b
+URxvt.color208: #fe8019
+URxvt.color214: #fabd2f
+URxvt.color223: #ebdbb2
+URxvt.color228: #f2e5bc
+URxvt.color229: #fbf1c7
+URxvt.color230: #f9f5d7
+URxvt.color234: #1d2021
+URxvt.color235: #282828
+URxvt.color236: #32302f
+URxvt.color237: #3c3836
+URxvt.color239: #504945
+URxvt.color241: #665c54
+URxvt.color243: #7c6f64
+URxvt.color244: #928374
+URxvt.color245: #928374
+URxvt.color246: #a89984
+URxvt.color248: #bdae93
+URxvt.color250: #d5c4a1
