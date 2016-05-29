@@ -1,5 +1,5 @@
-!URxvt*depth: 32 # disabled for ranger to preview pics
-URxvt*scrollColor: #232c31
+URxvt*depth: 32 # disabled for ranger to preview pics
+!URxvt*scrollColor: #232c31
 !URxvt*font:-misc-tamsynmod-medium-r-normal--17-123-100-100-c-80-iso8859-1
 URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
 !URxvt*boldFont:-misc-tamsynmod-bold-r-normal--17-123-100-100-c-80-iso8859-1
@@ -12,10 +12,11 @@ URxvt*termName: rxvt-256color
 URxvt*saveLines: 65535
 URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
 URxvt*urgentOnBell: false
+URxvt*fading: 30
 !URxvt*letterSpace: -1
 
-URxvt*background: #1D1F21
-URxvt*foreground: #C5C8C6
+URxvt*background: #3F3F3F
+URxvt*foreground: #DBDBDB
 
 ! BLK
 URxvt*color0:   #282A2E
@@ -42,48 +43,13 @@ URxvt*color14:  #8ABEB7
 URxvt*color7:   #6C7A80
 URxvt*color15:  #C5C8C6
 
+URxvt*color26:	#FF92EB
+URxvt*color66:	#36D646
+URxvt*color88:	#19b0a1
+
 Xft.autohint: 0
 Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-
-! ----------------------------------------------------------------------
-! ! File: gruvbox-urxvt256.xresources
-! ! Description: Retro groove colorscheme generalized
-! ! Author: morhetz <morhetz@gmail.com>
-! ! Source: https://github.com/morhetz/gruvbox-generalized
-! ! Last Modified: 13 Dec 2013
-! ! --------------------------------------------------------------------
-
-URxvt.color24:  #076678
-URxvt.color66:  #427b58
-URxvt.color88:  #9d0006
-URxvt.color96:  #8f3f71
-URxvt.color100: #79740e
-URxvt.color108: #8ec07c
-URxvt.color109: #83a598
-URxvt.color130: #af3a03
-URxvt.color136: #b57614
-URxvt.color142: #b8bb26
-URxvt.color167: #fb4934
-URxvt.color175: #d3869b
-URxvt.color208: #fe8019
-URxvt.color214: #fabd2f
-URxvt.color223: #ebdbb2
-URxvt.color228: #f2e5bc
-URxvt.color229: #fbf1c7
-URxvt.color230: #f9f5d7
-URxvt.color234: #1d2021
-URxvt.color235: #282828
-URxvt.color236: #32302f
-URxvt.color237: #3c3836
-URxvt.color239: #504945
-URxvt.color241: #665c54
-URxvt.color243: #7c6f64
-URxvt.color244: #928374
-URxvt.color245: #928374
-URxvt.color246: #a89984
-URxvt.color248: #bdae93
-URxvt.color250: #d5c4a1
