@@ -112,3 +112,6 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 printf "\033]4;16;rgb:FF/92/EB\033\\"
 printf "\033]4;17;rgb:36/D6/46\033\\"
 printf "\033]4;18;rgb:19/B0/A1\033\\"
+printf "\033]4;19;rgb:FF/7A/00\033\\"
+printf "\033]4;20;rgb:FF/F8/6C\033\\"
+printf "\033]4;21;rgb:AB/6C/FF\033\\"
