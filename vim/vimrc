@@ -15,6 +15,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+" Plugin 'w0ng/vim-hybrid'
+" Plugin 'morhetz/gruvbox'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -26,6 +29,7 @@ filetype plugin indent on    " required
 syntax on
 set number
 set laststatus=2
+let g:c_no_curly_error = 1 " do not tag {} as error in ()
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = 'powerlineish'
@@ -52,10 +56,13 @@ set showcmd 		"show cmd you entered
 set ruler
 set cursorline
 
-" set color scheme
+" setup colorscheme
 "set background=dark
-colorscheme Tomorrow-Night
-
+"let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 1 
+"colorscheme hybrid
+"set background=dark
+colorscheme mongolia_dark
 "set cursorline if seted every window will hight cursor line at the same time
 "set cursorcolumn
 hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=darkred guifg=white

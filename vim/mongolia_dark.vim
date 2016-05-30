@@ -17,7 +17,7 @@ highlight Float		ctermfg=14	ctermbg=NONE
 highlight Boolean	ctermfg=14	ctermbg=NONE
 " Identifier
 highlight Identifier	ctermfg=3	ctermbg=NONE
-highlight Function	ctermfg=88	ctermbg=NONE
+highlight Function	ctermfg=18	ctermbg=NONE
 " Statement
 highlight Conditional	ctermfg=11	ctermbg=NONE
 highlight Repeat	ctermfg=2	ctermbg=NONE
@@ -28,10 +28,10 @@ highlight Exception	ctermfg=9	ctermbg=NONE
 " Type
 highlight Type		ctermfg=4	ctermbg=NONE
 highlight StorageClass	ctermfg=9	ctermbg=NONE
-highlight Structure	ctermfg=26	ctermbg=NONE
+highlight Structure	ctermfg=16	ctermbg=NONE
 highlight Typedef	ctermfg=1	ctermbg=NONE
 " Commment
 highlight Comment	ctermfg=7	ctermbg=NONE
 " Special
-highlight Special	ctermfg=66	ctermbg=NONE
+highlight Special	ctermfg=17	ctermbg=NONE
 
