@@ -59,21 +59,17 @@ set cursorline
 
 " setup colorscheme
 "set background=dark
-"let g:hybrid_custom_term_colors = 1
-"let g:hybrid_reduced_contrast = 1 
-"colorscheme hybrid
-"set background=dark
 colorscheme mongolia_dark
 "set cursorline if seted every window will hight cursor line at the same time
 "set cursorcolumn
-hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=darkred guifg=white
-hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE 
+" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white 
 hi VertSplit cterm=NONE ctermbg=NONE ctermfg=white
 hi StatusLineNC cterm=NONE ctermbg=darkblue ctermfg=darkred
 hi StatusLine cterm=NONE ctermbg=white ctermfg=black
-hi Pmenu cterm=NONE ctermbg=darkyellow ctermfg=black
+hi Pmenu cterm=NONE ctermbg=8 ctermfg=7
 hi PmenuSel cterm=NONE ctermbg=white ctermfg=black
-hi PmenuThumb cterm=NONE ctermbg=darkgreen ctermfg=darkgreen
+hi PmenuThumb cterm=NONE ctermbg=darkgreen ctermfg=grey
 hi Visual cterm=NONE ctermbg=darkyellow ctermfg=black
 
 
