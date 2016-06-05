@@ -13,19 +13,20 @@
 #*   whether the desktop is the current focused (1) or not (0)
 #*   whether any client in that desktop has received an urgent hint
  
+icon_panel=""
 icon_mpc="  "
-icon_vol="  "
-icon_date="  "
+icon_vol="  "
+icon_date="  "
 icon_title="  "
 icon_lt="" # left triangle
 icon_ra="" # right arrow
 icon_la="" # left arrow
 
-curtag="FF823232" # background color of current tag
-acttag="FF917154" # background color of active tag
-nemptag="FF663366" # background color of not empty tag
-ugtag="FFFF0000" # background color of urgent tag
-deftag="FFCC6600" # background color of default tag
+curtag="FFDE935F" # color of current tag
+acttag="FF917154" # color of active tag
+nemptag="FF5F819D" # color of not empty tag
+ugtag="FFCC6666" # color of urgent tag
+deftag="FFCC6600" # color of default tag
 titlecolor="FF000000" # main color of title bar
 
 names=( "term" "web" "img" "misc" "alpha" )
@@ -68,22 +69,22 @@ function lineout()
 			focused=${desktops[$i]:10:1}
 			urgent=${desktops[$i]:12:1}
 			if [ "$focused" -ne 0 ]; then
-				fg[$i]="%{F-}"
+				fg[$i]="%{F#$curtag}"
 				bg[$i]="%{B-}"
-				ul[$i]="%{U#$curtag}" #underline color
-				ub[$i]="%{+u}"
+				#ul[$i]="%{U#$curtag}" #underline color
+				ub[$i]="%{-u}"
 				ue[$i]="%{-u}"
 			elif [ "$urgent" -ne 0 ]; then
-				fg[$i]="%{F-}"
+				fg[$i]="%{F#$ugtag}"
 				bg[$i]="%{B-}"
-				ul[$i]="%{U#$ugtag}"
-				ub[$i]="%{+u}"
+				#ul[$i]="%{U#$ugtag}"
+				ub[$i]="%{-u}"
 				ue[$i]="%{-u}"
 			elif [ "$count" -ne 0 ]; then
-				fg[$i]="%{F-}"
+				fg[$i]="%{F#$nemptag}"
                                 bg[$i]="%{B-}"
-                                ul[$i]="%{U#$nemptag}"
-                                ub[$i]="%{+u}"
+                                #ul[$i]="%{U#$nemptag}"
+                                ub[$i]="%{-u}"
                                 ue[$i]="%{-u}"
 			else
 				fg[$i]="%{F-}"
@@ -99,20 +100,20 @@ function lineout()
 		done
 		# set name foreground background underline color of monitor focused
 		case $focused_monitor in
-		0)	monfg="%{F-}"
+		0)	monfg="%{F#$curtag}"
 			monbg="%{B-}"
-			monul="%{U#$curtag}"
+			#monul="%{U#$curtag}"
 			monname=INFINITE
 			;;
-		1)	monfg="%{F-}"
+		1)	monfg="%{F#$nemptag}"
 			monbg="%{B-}"
-			monul="%{U#$nemptag}"
+			#monul="%{U#$nemptag}"
 			monname=WORLD
 			;;
 		*)	monname=WRONG
 			;;
 		esac
-		mon="$monfg$monbg%{+u}$monul$monname%{-u}$monbg$monfg"
+		mon="$monfg$monbg%{-u}$monul$monname%{-u}$monbg$monfg"
 		for i in $(seq 0 $[$moncnt-1]); do # monitors
 			m_status[$i]=""
 			for j in $(seq 0 $[${#names[@]}-1]); do
@@ -139,8 +140,9 @@ function lineout()
 			;;
 		esac
 		if [[ -n "$tags" && -n "$vol" && -n "$date" ]]; then
-			echo "%{l} $tags%{c}$monitor%{r}%{F#$curtag}%{U#$curtag}%{+u}$icon_vol%{-u}%{B-}%{F-} $vol% %{F#$nemptag}%{U#$nemptag}%{+u}$icon_date%{-u}%{B-}%{F-} $date "
+			echo "%{l}$icon_panel $tags%{c}$monitor%{r}%{F#$curtag}$icon_vol%{-u}%{B-} $vol% %{F#$nemptag}$icon_date%{-u}%{B-} $date "
 		fi
 	done
-} 2> /dev/null | lemonbar -d -p -g 1600x22+1080 -u 4 -B '#99212121' -F '#FFA8A8A8' -f '-gohu-gohufont-medium-r-*-*-14-*-*-*-*-*-*-*'
+} 2> /dev/null | lemonbar -d -p -g 1600x28+1080 -u 4 -B '#00212121' -F '#FFA8A8A8' -f 'MonofurboldForPowerline Nerd Font-14' 
+#'-gohu-gohufont-bold-r-*-*-14-*-*-*-*-*-*-*'
 #default panel foreground color shuould be A8A8A8

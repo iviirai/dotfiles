@@ -1,7 +1,6 @@
 set nocompatible
 filetype off
 
-
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -33,7 +32,19 @@ let g:c_no_curly_error = 1 " do not tag {} as error in ()
 let g:cpp_class_scope_highlight = 1 " for vim-ccp-enhanced-highlight
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 0
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#close_symbol = ''
 let g:airline_theme = 'powerlineish'
+" change airline symbols
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " no diagnostic information
 let g:ycm_enable_diagnostic_signs = 0
@@ -56,6 +67,7 @@ set incsearch 		"use increment search
 set showcmd 		"show cmd you entered
 set ruler
 set cursorline
+set hidden 		"hidden buffer already gone
 
 " setup colorscheme
 "set background=dark
@@ -116,6 +128,18 @@ autocmd BufNewFile,BufRead *.cc,*.hh let g:ycm_global_ycm_extra_conf = '~/.ycm_e
 "map key of changing cursorline
 	"map ,c :setlocal cursorline<CR>
 	"map ,d :setlocal nocursorline<CR>
+	
+
+
+" Open a new buffer
+" <leader> is "\" by default
+nmap <leader>t :enew<CR> 
+" Next buffer
+nmap <leader>l :bnext<CR>
+" Previous buffer
+nmap <leader>h :bprevious<CR>
+" Delete buffer
+nmap <leader>d :bdelete<CR>
 
 
 "map of Alternate Header file plugin a.vim
