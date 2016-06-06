@@ -100,12 +100,12 @@ function lineout()
 		done
 		# set name foreground background underline color of monitor focused
 		case $focused_monitor in
-		0)	monfg="%{F#$curtag}"
+		0)	monfg="%{F-}"
 			monbg="%{B-}"
 			#monul="%{U#$curtag}"
 			monname=INFINITE
 			;;
-		1)	monfg="%{F#$nemptag}"
+		1)	monfg="%{F-}"
 			monbg="%{B-}"
 			#monul="%{U#$nemptag}"
 			monname=WORLD
@@ -140,7 +140,7 @@ function lineout()
 			;;
 		esac
 		if [[ -n "$tags" && -n "$vol" && -n "$date" ]]; then
-			echo "%{l}$icon_panel $tags%{c}$monitor%{r}%{F#$curtag}$icon_vol%{-u}%{B-} $vol% %{F#$nemptag}$icon_date%{-u}%{B-} $date "
+			echo "%{l}$icon_panel $tags%{c}$monitor%{r}%{F-}$icon_vol%{-u}%{B-} $vol% %{F-}$icon_date%{-u}%{B-} $date "
 		fi
 	done
 } 2> /dev/null | lemonbar -d -p -g 1600x28+1080 -u 4 -B '#00212121' -F '#FFA8A8A8' -f 'MonofurboldForPowerline Nerd Font-14' 
