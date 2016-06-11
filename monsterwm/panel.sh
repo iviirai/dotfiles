@@ -15,8 +15,8 @@
  
 icon_panel=""
 icon_mpc="  "
-icon_vol="  "
-icon_date="  "
+icon_vol=""
+icon_date="" 
 icon_title="  "
 icon_lt="" # left triangle
 icon_ra="" # right arrow
@@ -132,7 +132,7 @@ function lineout()
 			date=${cmd[1]}
 			;;
 		"volume_") 
-			vol=${cmd[1]}
+			vol=${cmd[1]}%  # add % sign
 			;;
 		*)  
 			monitor=${cmd[0]}
@@ -140,9 +140,9 @@ function lineout()
 			;;
 		esac
 		if [[ -n "$tags" && -n "$vol" && -n "$date" ]]; then
-			echo "%{l}$icon_panel $tags%{c}$monitor%{r}%{F-}$icon_vol%{-u}%{B-} $vol% %{F-}$icon_date%{-u}%{B-} $date "
+			echo "%{l}$icon_panel $tags%{c}$monitor%{r}%{F-}%{B-}$icon_vol $vol $icon_date $date "
 		fi
 	done
-} 2> /dev/null | lemonbar -d -p -g 1600x28+1080 -u 4 -B '#00212121' -F '#FFA8A8A8' -f 'MonofurboldForPowerline Nerd Font-14' 
-#'-gohu-gohufont-bold-r-*-*-14-*-*-*-*-*-*-*'
+} 2> /dev/null | lemonbar -d -p -g 1600x24+1080 -u 4 -B '#00212121' -F '#FFA8A8A8' -f 'monofur for Powerline:style=bold:size=13' -f 'FontAwesome:size=13' 
+#-f  '-gohu-gohufont-bold-r-*-*-14-*-*-*-*-*-*-*' -f 'FontAwesome:size=13'
 #default panel foreground color shuould be A8A8A8

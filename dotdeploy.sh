@@ -66,6 +66,7 @@ fi
 
 
 #  setup fonts
+## bitmap font goes to ~/.fonts, ttf goes to .local/share/fonts
 if [[ -n $1 ]]; then
 	echo -e "\033[35m########### setup fonts ###########\033[0m"
 	if [[ ! -d "$HOME/.fonts" ]]; then

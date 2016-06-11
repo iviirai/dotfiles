@@ -13,7 +13,7 @@
 #define MASTER_SIZE     0.50
 #define SHOW_PANEL      True      /* show panel by default on exec */
 #define TOP_PANEL       True      /* False means panel is on bottom */
-#define PANEL_HEIGHT    22        /* 0 for no space for panel, thus no panel */
+#define PANEL_HEIGHT    24        /* 0 for no space for panel, thus no panel */
 #define DEFAULT_MODE    FLOAT     /* initial layout/mode: TILE MONOCLE BSTACK GRID FLOAT */
 #define ATTACH_ASIDE    True      /* False means new window is master */
 #define FOLLOW_WINDOW   False     /* follow the window when moved to a different desktop */
@@ -55,7 +55,15 @@ struct ml {
 static const struct ml init[] = { \
     /* monitor  desktop   mode  masz  sbar   */
     {     0,       0,   { TILE,  50,  True  } },
-    {     1,       0,   { GRID,  0,   False } },
+    {     0,       1,   { FLOAT, 50,  True  } },
+    {     0,       2,   { FLOAT, 50,  True  } },
+    {     0,       3,   { FLOAT, 50,  True  } },
+    {     0,       4,   { FLOAT, 50,  True  } },
+    {     1,       0,   { GRID,  50,  False } },
+    {     1,       1,   { FLOAT, 50,  False } },
+    {     1,       2,   { FLOAT, 50,  False } },
+    {     1,       3,   { FLOAT, 50,  False } },
+    {     1,       4,   { FLOAT, 50,  False } },
 };
 
 /**
@@ -78,7 +86,8 @@ static const AppRule rules[] = { \
  * must always end with ', NULL };'
  */
 static const char *termcmd[] = { "urxvt", NULL };
-static const char *menucmd[] = { "dmenu_run", "-dim", "0.6", "-fn", "-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1", "-h", "22", "-l", "16", "-w", "200", "-sb", "#823232", NULL };
+// static const char *menucmd[] = { "dmenu_run", "-dim", "0.6", "-fn", "-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1", "-h", "22", "-l", "16", "-w", "200", "-sb", "#823232", NULL };
+static const char *menucmd[] = { "dmenu_run", "-dim", "0.6", "-fn", "monofur for Powerline-13:bold", "-h", "24", "-l", "16", "-w", "200", "-sb", "#3f3f3f", "-centerx", "-s", "0", NULL };
 
 #define MONITORCHANGE(K,N) \
     {  MOD4,             K,              change_monitor, {.i = N}}, \
