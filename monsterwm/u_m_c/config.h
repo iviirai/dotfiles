@@ -22,7 +22,7 @@
 #define CLICK_TO_FOCUS  True      /* focus an unfocused window when clicked  */
 #define FOCUS_BUTTON    Button3   /* mouse button to be used along with CLICK_TO_FOCUS */
 #define BORDER_WIDTH    4         /* window border width */
-#define FOCUS           "#DE935F" /* focused window border color   */
+#define FOCUS           "#CC6666" /* focused window border color   */
 #define UNFOCUS         "#373B41" /* unfocused window border color */
 #define INFOCUS         "#5F819D" /* focused window border color on unfocused monitor */
 #define MINWSZ          50        /* minimum window size in pixels */
