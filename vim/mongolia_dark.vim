@@ -19,7 +19,7 @@ highlight Number	ctermfg=14	ctermbg=NONE
 highlight Float		ctermfg=14	ctermbg=NONE
 highlight Boolean	ctermfg=14	ctermbg=NONE
 " Identifier
-highlight Identifier	ctermfg=3	ctermbg=NONE
+highlight Identifier	ctermfg=3	ctermbg=NONE	cterm=NONE
 highlight Function	ctermfg=18	ctermbg=NONE
 " Statement
 highlight Statement	ctermfg=10	ctermbg=NONE
@@ -43,6 +43,8 @@ highlight link	Delimiter	Function
 " Current line number
 highlight LineNr	ctermfg=4	ctermbg=NONE
 highlight CursorLineNr	ctermfg=11	ctermbg=NONE
+" Matching bracket
+highlight MatchParen 	ctermfg=13	ctermbg=NONE	cterm=bold
 " highlight typedef _t as type.
 " http://blog.cdleary.com/2007/08/matching-_t-types-in-your-vimrc/
 " syntax match cType	/\w\+_t\ze\W/

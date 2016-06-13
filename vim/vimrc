@@ -15,6 +15,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tpope/vim-fugitive'
 " Plugin 'w0ng/vim-hybrid'
 " Plugin 'morhetz/gruvbox'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -41,10 +42,10 @@ let g:airline_theme = 'powerlineish'
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " no diagnostic information
 let g:ycm_enable_diagnostic_signs = 0
@@ -68,12 +69,17 @@ set showcmd 		"show cmd you entered
 set ruler
 set cursorline
 set hidden 		"hidden buffer already gone
+set wildmenu
+set wildmode=longest,list " command line completion
+set wildignore+=*.a,*.o	"ignore files of specific type
+set wildignore+=*.jpg,*.png,*.bmp,*.ico
+set wildignore+=*.swp,*~
 
 " setup colorscheme
-"set background=dark
+" set background=dark
 colorscheme mongolia_dark
-"set cursorline if seted every window will hight cursor line at the same time
-"set cursorcolumn
+" set cursorline if seted every window will hight cursor line at the same time
+" set cursorcolumn
 hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE 
 " hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white 
 hi VertSplit cterm=NONE ctermbg=NONE ctermfg=white
@@ -94,8 +100,8 @@ autocmd BufNewFile,BufRead *.cc,*.hh setlocal expandtab tabstop=2 shiftwidth=2 s
 
 " set different ycm_extra_conf.py for c and c++ source files
 " typically it should be let b:variable, but here is a exception.
-autocmd BufNewFile,BufRead *.c,*.h let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_c.py'
-autocmd BufNewFile,BufRead *.cc,*.hh let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_cc.py'
+autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.c,*.h let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_c.py'
+autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.cc,*.hh let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_cc.py'
 
 "map some useful keys
 "include no highlight search(not perminant turnoff)
