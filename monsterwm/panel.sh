@@ -22,7 +22,7 @@ icon_lt="" # left triangle
 icon_ra="" # right arrow
 icon_la="" # left arrow
 
-curtag="FFDE935F" # color of current tag
+curtag="FFCC6666" # color of current tag
 acttag="FF917154" # color of active tag
 nemptag="FF5F819D" # color of not empty tag
 ugtag="FFCC6666" # color of urgent tag
@@ -143,6 +143,6 @@ function lineout()
 			echo "%{l}$icon_panel $tags%{c}$monitor%{r}%{F-}%{B-}$icon_vol $vol $icon_date $date "
 		fi
 	done
-} 2> /dev/null | lemonbar -d -p -g 1600x24+1080 -u 4 -B '#00212121' -F '#FFA8A8A8' -f 'monofur for Powerline:style=bold:size=13' -f 'FontAwesome:size=13' 
+} 2> /dev/null | lemonbar -d -p -g 1600x24+1080 -u 4 -B '#00212121' -F '#FFFAFAFA' -f 'monofur for Powerline:style=bold:size=13' -f 'FontAwesome:size=13' 
 #-f  '-gohu-gohufont-bold-r-*-*-14-*-*-*-*-*-*-*' -f 'FontAwesome:size=13'
 #default panel foreground color shuould be A8A8A8
