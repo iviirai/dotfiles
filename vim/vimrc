@@ -77,7 +77,7 @@ set wildignore+=*.swp,*~
 
 " setup colorscheme
 " set background=dark
-colorscheme mongolia_dark
+colorscheme mongolia_night
 " set cursorline if seted every window will hight cursor line at the same time
 " set cursorcolumn
 hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE 
