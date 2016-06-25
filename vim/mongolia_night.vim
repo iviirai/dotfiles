@@ -49,3 +49,14 @@ highlight MatchParen 	ctermfg=13	ctermbg=NONE	cterm=bold
 " http://blog.cdleary.com/2007/08/matching-_t-types-in-your-vimrc/
 " syntax match cType	/\w\+_t\ze\W/
 " put it in syntax plugin
+
+
+"Diff
+highlight DiffAdd	ctermfg=8	ctermbg=4	cterm=bold
+highlight DiffChange	ctermfg=8	ctermbg=13	cterm=bold
+highlight DiffDelete	ctermfg=8	ctermbg=6	cterm=bold
+highlight DiffText	ctermfg=8	ctermbg=9	cterm=bold
+
+"Fold
+highlight Folded	ctermfg=8	ctermbg=7	cterm=bold
+highlight FoldColumn 	ctermfg=8	ctermbg=7	cterm=bold
