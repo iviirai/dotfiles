@@ -5,6 +5,9 @@ if exists("syntax_on")
 endif
 let g:colors_name = "Mongolia Night"
 
+" Normal
+highlight Normal 	ctermfg=23	ctermbg=NONE
+
 " PreProc
 highlight PreProc	ctermfg=6	ctermbg=NONE
 highlight Include 	ctermfg=6 	ctermbg=NONE
@@ -20,7 +23,7 @@ highlight Float		ctermfg=14	ctermbg=NONE
 highlight Boolean	ctermfg=14	ctermbg=NONE
 " Identifier
 highlight Identifier	ctermfg=3	ctermbg=NONE	cterm=NONE
-highlight Function	ctermfg=18	ctermbg=NONE
+highlight Function	ctermfg=22	ctermbg=NONE
 " Statement
 highlight Statement	ctermfg=10	ctermbg=NONE
 highlight Conditional	ctermfg=11	ctermbg=NONE
@@ -38,25 +41,59 @@ highlight Typedef	ctermfg=3	ctermbg=NONE
 highlight Comment	ctermfg=7	ctermbg=NONE
 " Special
 highlight Special	ctermfg=17	ctermbg=NONE
-highlight link	Delimiter	Function	
-
+highlight Delimiter	ctermfg=18	ctermbg=NONE
 " Current line number
 highlight LineNr	ctermfg=4	ctermbg=NONE
 highlight CursorLineNr	ctermfg=11	ctermbg=NONE
 " Matching bracket
-highlight MatchParen 	ctermfg=13	ctermbg=NONE	cterm=bold
+highlight MatchParen 	ctermfg=8	ctermbg=13	cterm=bold
 " highlight typedef _t as type.
 " http://blog.cdleary.com/2007/08/matching-_t-types-in-your-vimrc/
 " syntax match cType	/\w\+_t\ze\W/
 " put it in syntax plugin
 
 
-"Diff
+" Diff
 highlight DiffAdd	ctermfg=8	ctermbg=4	cterm=bold
 highlight DiffChange	ctermfg=8	ctermbg=13	cterm=bold
 highlight DiffDelete	ctermfg=8	ctermbg=6	cterm=bold
 highlight DiffText	ctermfg=8	ctermbg=9	cterm=bold
 
-"Fold
+" Fold
 highlight Folded	ctermfg=8	ctermbg=7	cterm=bold
 highlight FoldColumn 	ctermfg=8	ctermbg=7	cterm=bold
+
+" Error
+highlight ErrorMsg 	ctermfg=0	ctermbg=9	cterm=bold
+highlight WarningMsg	ctermfg=0	ctermbg=3	cterm=bold
+highlight Error		ctermfg=15	ctermbg=9	cterm=NONE
+ 
+" MoreMsg
+highlight MoreMsg	ctermfg=4	ctermbg=15	cterm=bold
+
+" Search
+highlight IncSearch	ctermfg=NONE	ctermbg=NONE	cterm=reverse
+highlight Search	ctermfg=15	ctermbg=4	cterm=NONE
+
+" Status
+highlight StatusLine	ctermfg=8	ctermbg=12	cterm=NONE
+highlight StatusLineNC	ctermfg=3	ctermbg=8	cterm=NONE
+
+" Split
+highlight VertSplit	ctermfg=3	ctermbg=NONE
+
+" Popup Menu
+highlight Pmenu		ctermfg=8	ctermbg=12	cterm=NONE
+highlight PmenuSel	ctermfg=12	ctermbg=8	cterm=bold
+highlight PmenuSbar	ctermfg=4	ctermbg=4	cterm=NONE
+highlight PmenuThumb	ctermfg=15	ctermbg=15	cterm=NONE
+
+" Cursor IMPORTANT!! Urxvt or some other terms use it's own color anyway.
+highlight CursorLine	ctermfg=NONE	ctermbg=0	cterm=NONE
+" highlight Cursor	ctermfg=8	ctermbg=17	cterm=bold
+
+" Visual
+highlight Visual	ctermfg=0	ctermbg=4	cterm=bold
+
+" NonText
+highlight NonText	ctermfg=4	ctermbg=NONE

@@ -1,4 +1,5 @@
 set nocompatible
+set t_Co=256
 filetype off
 
 " set the runtime path to include Vundle and initialize
@@ -16,6 +17,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
+Plugin 'jtratner/vim-flavored-markdown'
 " Plugin 'w0ng/vim-hybrid'
 " Plugin 'morhetz/gruvbox'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -27,6 +29,8 @@ Plugin 'tpope/vim-fugitive'
 call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
+set background=dark
+colorscheme mongolia_night
 set number
 set laststatus=2
 let g:c_no_curly_error = 1 " do not tag {} as error in ()
@@ -37,7 +41,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#close_symbol = ''
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'bubblegum'
 " change airline symbols
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
@@ -57,6 +61,7 @@ let g:ycm_filetype_whitelist = {
 " set to 99, so identifier completion engine will not be triggered just 
 " leaves semantic engine. default is 2.
 " let g:ycm_min_num_of_chars_for_completion = 99
+
 set completeopt=menuone
 set tabstop=8		"use tab which 8 spaces long
 set shiftwidth=8
@@ -77,18 +82,22 @@ set wildignore+=*.swp,*~
 
 " setup colorscheme
 " set background=dark
-colorscheme mongolia_night
+
+
 " set cursorline if seted every window will hight cursor line at the same time
 " set cursorcolumn
-hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE 
+
+hi CursorLine  	ctermfg=NONE 	ctermbg=0 	cterm=NONE
 " hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white 
-hi VertSplit cterm=NONE ctermbg=NONE ctermfg=white
-hi StatusLineNC cterm=NONE ctermbg=darkblue ctermfg=darkred
-hi StatusLine cterm=NONE ctermbg=white ctermfg=black
-hi Pmenu cterm=NONE ctermbg=8 ctermfg=7
-hi PmenuSel cterm=NONE ctermbg=white ctermfg=black
-hi PmenuThumb cterm=NONE ctermbg=darkgreen ctermfg=grey
-hi Visual cterm=NONE ctermbg=darkyellow ctermfg=black
+"hi VertSplit cterm=NONE ctermbg=NONE ctermfg=white
+"hi StatusLineNC ctermfg=3	ctermbg=6	cterm=bold
+"hi StatusLine cterm=NONE ctermbg=white ctermfg=black
+hi Pmenu 	ctermfg=8 	ctermbg=12	cterm=NONE
+hi PmenuSel 	ctermfg=12 	ctermbg=8	cterm=bold
+hi PmenuSbar 	ctermfg=4	ctermbg=4	cterm=NONE
+hi PmenuThumb 	ctermfg=15	ctermbg=15	cterm=NONE
+hi Visual 	ctermfg=0	ctermbg=4	cterm=bold
+
 
 
 "  different filetype different indentation
@@ -102,6 +111,9 @@ autocmd BufNewFile,BufRead *.cc,*.hh setlocal expandtab tabstop=2 shiftwidth=2 s
 " typically it should be let b:variable, but here is a exception.
 autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.c,*.h let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_c.py'
 autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.cc,*.hh let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_cc.py'
+
+"  set to use github-flavored-markdown
+autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 
 "map some useful keys
 "include no highlight search(not perminant turnoff)
