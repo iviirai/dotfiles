@@ -18,14 +18,14 @@ highlight PreCondit	ctermfg=11	ctermbg=NONE
 highlight Constant	ctermfg=9	ctermbg=NONE
 highlight String	ctermfg=5	ctermbg=NONE
 highlight Character	ctermfg=5	ctermbg=NONE
-highlight Number	ctermfg=14	ctermbg=NONE
-highlight Float		ctermfg=14	ctermbg=NONE
-highlight Boolean	ctermfg=14	ctermbg=NONE
+highlight Number	ctermfg=24	ctermbg=NONE
+highlight Float		ctermfg=24	ctermbg=NONE
+highlight Boolean	ctermfg=24	ctermbg=NONE
 " Identifier
 highlight Identifier	ctermfg=3	ctermbg=NONE	cterm=NONE
 highlight Function	ctermfg=22	ctermbg=NONE
 " Statement
-highlight Statement	ctermfg=10	ctermbg=NONE
+highlight Statement	ctermfg=18	ctermbg=NONE
 highlight Conditional	ctermfg=11	ctermbg=NONE
 highlight Repeat	ctermfg=19	ctermbg=NONE
 highlight Label		ctermfg=13	ctermbg=NONE
@@ -41,7 +41,7 @@ highlight Typedef	ctermfg=3	ctermbg=NONE
 highlight Comment	ctermfg=7	ctermbg=NONE
 " Special
 highlight Special	ctermfg=17	ctermbg=NONE
-highlight Delimiter	ctermfg=18	ctermbg=NONE
+highlight Delimiter	ctermfg=17	ctermbg=NONE
 " Current line number
 highlight LineNr	ctermfg=4	ctermbg=NONE
 highlight CursorLineNr	ctermfg=11	ctermbg=NONE
@@ -64,7 +64,7 @@ highlight Folded	ctermfg=8	ctermbg=7	cterm=bold
 highlight FoldColumn 	ctermfg=8	ctermbg=7	cterm=bold
 
 " Error
-highlight ErrorMsg 	ctermfg=0	ctermbg=9	cterm=bold
+highlight ErrorMsg 	ctermfg=15	ctermbg=9	cterm=bold
 highlight WarningMsg	ctermfg=0	ctermbg=3	cterm=bold
 highlight Error		ctermfg=15	ctermbg=9	cterm=NONE
  
@@ -97,3 +97,12 @@ highlight Visual	ctermfg=0	ctermbg=4	cterm=bold
 
 " NonText
 highlight NonText	ctermfg=4	ctermbg=NONE
+
+" Underline
+highlight Underlined	ctermfg=24	ctermbg=NONE	cterm=underline
+
+" For YouCompleteMe Plugin
+highlight YcmErrorLine	ctermfg=15	ctermbg=9	cterm=NONE
+highlight YcmWarningLine ctermfg=0	ctermbg=3	cterm=bold
+highlight YcmErrorSection ctermfg=15	ctermbg=9	cterm=NONE
+highlight YcmWarningSection ctermfg=0	ctermbg=3	cterm=bold
