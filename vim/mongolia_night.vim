@@ -80,7 +80,7 @@ highlight StatusLine	ctermfg=8	ctermbg=12	cterm=NONE
 highlight StatusLineNC	ctermfg=3	ctermbg=8	cterm=NONE
 
 " Split
-highlight VertSplit	ctermfg=3	ctermbg=NONE
+highlight VertSplit	ctermfg=15	ctermbg=NONE	cterm=NONE
 
 " Popup Menu
 highlight Pmenu		ctermfg=8	ctermbg=12	cterm=NONE
