@@ -1,9 +1,8 @@
-URxvt*depth: 32 # disabled for ranger to preview pics
-!URxvt*scrollColor: #232c31
-!URxvt*font:-misc-tamsynmod-medium-r-normal--17-123-100-100-c-80-iso8859-1
+!URxvt*depth: 32 # disabled for ranger to preview pics
 URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
-!URxvt*boldFont:-misc-tamsynmod-bold-r-normal--17-123-100-100-c-80-iso8859-1
 URxvt*boldFont:-gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
+!URxvt.font:xft:MonofurForPowerline Nerd Font:style=Regular:pixelsize=18
+!URxvt.boldFont:xft:MonofurboldForPowerline Nerd Font:style=Bold:pixelsize=18
 URxvt*scrollBar: 0
 URxvt*perl-ext-common: 
 URxvt*iso14755: false
@@ -12,7 +11,7 @@ URxvt*termName: rxvt-256color
 URxvt*saveLines: 65535
 URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
 URxvt*urgentOnBell: false
-URxvt*fading: 30
+!URxvt*fading: 30
 !URxvt*letterSpace: -1
 
 URxvt*background: #3F3F3F
@@ -43,13 +42,12 @@ URxvt*color14:  #8ABEB7
 URxvt*color7:   #6C7A80
 URxvt*color15:  #C5C8C6
 
-URxvt*color26:	#FF92EB
-URxvt*color66:	#36D646
-URxvt*color88:	#19b0a1
-
 Xft.autohint: 0
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+!Xft.hintstyle: hintslight
+Xft.hintstyle: hintfull
 Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
+!Xft.antialias: 1
+!Xft.rgba: rgb
+Xft.rgba: none
+Xft.dpi: 96

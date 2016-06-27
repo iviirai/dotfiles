@@ -80,23 +80,7 @@ set wildignore+=*.a,*.o	"ignore files of specific type
 set wildignore+=*.jpg,*.png,*.bmp,*.ico
 set wildignore+=*.swp,*~
 
-" setup colorscheme
-" set background=dark
 
-
-" set cursorline if seted every window will hight cursor line at the same time
-" set cursorcolumn
-
-hi CursorLine  	ctermfg=NONE 	ctermbg=0 	cterm=NONE
-" hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white 
-"hi VertSplit cterm=NONE ctermbg=NONE ctermfg=white
-"hi StatusLineNC ctermfg=3	ctermbg=6	cterm=bold
-"hi StatusLine cterm=NONE ctermbg=white ctermfg=black
-hi Pmenu 	ctermfg=8 	ctermbg=12	cterm=NONE
-hi PmenuSel 	ctermfg=12 	ctermbg=8	cterm=bold
-hi PmenuSbar 	ctermfg=4	ctermbg=4	cterm=NONE
-hi PmenuThumb 	ctermfg=15	ctermbg=15	cterm=NONE
-hi Visual 	ctermfg=0	ctermbg=4	cterm=bold
 
 
 
