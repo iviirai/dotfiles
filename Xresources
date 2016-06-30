@@ -3,7 +3,7 @@ URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
 URxvt*boldFont:-gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
 !URxvt.font:xft:MonofurForPowerline Nerd Font:style=Regular:pixelsize=18
 !URxvt.boldFont:xft:MonofurboldForPowerline Nerd Font:style=Bold:pixelsize=18
-URxvt*scrollBar: 0
+URxvt*scrollBar: false
 URxvt*perl-ext-common: 
 URxvt*iso14755: false
 URxvt*iso14755_52: false
@@ -11,6 +11,7 @@ URxvt*termName: rxvt-256color
 URxvt*saveLines: 65535
 URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
 URxvt*urgentOnBell: false
+URxvt*internalBorder: 0
 !URxvt*fading: 30
 !URxvt*letterSpace: -1
 
