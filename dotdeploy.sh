@@ -78,9 +78,13 @@ if [[ -n $1 ]]; then
 	cd $HOME/.fonts
 	mkfontdir
 	mkfontscale
-	fc-cache - fv
+	fc-cache -fv
 	xset +fp $HOME/.fonts
 	cd $OLD
+	mkdir -p  $HOME/.local/share/fonts
+	cp "$DIR"/fonts/Monofur* $HOME/.local/share/fonts
+	cp "$DIR"/fonts/fontawesome-webfont.ttf $HOME/.local/share/fonts
+	fc-cache -fv
 fi
 
 #  handle xresources for urxvt
