@@ -166,3 +166,10 @@ fi
 
 if [[ -e "$HOME"/.shadowsocks.json ]]; then
 	cp "$DIR"/shadowsocks.json "$HOME"/.shadowsocks.json
+
+
+###
+#  setup lightdm
+###
+	su - root -c "cp "$DIR"/lightdm/monsterwm.desktop /usr/share/xgreeters/"
+	su - root -c "cp "$DIR"/lightdm/50-monsterwm.conf /etc/lightdm/lightdm.conf.d/"
