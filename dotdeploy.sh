@@ -159,7 +159,9 @@ cp "$DIR"/compton.conf "$HOME"/.config/compton.conf
 if [[ $(which pip) == "" ]]; then
 	su - root -c "apt-get install python-pip"
 	su - root -c "pip install shadowsocks"
-	su - root -c "ln -s $HOME/.local/bin/sslocal /usr/local/bin/sslocal"
+	if [[ -L "/usr/local/bin/sslocal" ]]; then
+		su - root -c "ln -s $HOME/.local/bin/sslocal /usr/local/bin/sslocal"
+	fi
 fi
 
 if [[ -e "$HOME"/.shadowsocks.json ]]; then
