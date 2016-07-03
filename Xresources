@@ -1,8 +1,10 @@
 !URxvt*depth: 32 # disabled for ranger to preview pics
-URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
-URxvt*boldFont:-gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
+!URxvt*font:-gohu-gohufont-medium-r-normal--14-100-100-100-c-80-iso10646-1
+!URxvt*boldFont:-gohu-gohufont-bold-r-normal--14-100-100-100-c-80-iso10646-1
 !URxvt.font:xft:MonofurForPowerline Nerd Font:style=Regular:pixelsize=18
 !URxvt.boldFont:xft:MonofurboldForPowerline Nerd Font:style=Bold:pixelsize=18
+URxvt*font:xft:Hack:size=12:regular:antialias=true
+URxvt*boldFont:xft:Hack:size=12:bold:antialias=true
 URxvt*scrollBar: false
 URxvt*perl-ext-common: 
 URxvt*iso14755: false
@@ -11,7 +13,9 @@ URxvt*termName: rxvt-256color
 URxvt*saveLines: 65535
 URxvt*cutchars: "\\ `\"'&()*,;<=>?@[]^{|}:"
 URxvt*urgentOnBell: false
-URxvt*internalBorder: 0
+!URxvt*internalBorder: 0
+!URxvt*externalBorder: 0
+!URxvt*borderLess: false
 !URxvt*fading: 30
 !URxvt*letterSpace: -1
 
@@ -48,7 +52,7 @@ Xft.autohint: 0
 !Xft.hintstyle: hintslight
 Xft.hintstyle: hintfull
 Xft.hinting: 1
-!Xft.antialias: 1
+Xft.antialias: 1
 !Xft.rgba: rgb
 Xft.rgba: none
 Xft.dpi: 96
