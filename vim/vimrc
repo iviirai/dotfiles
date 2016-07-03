@@ -81,9 +81,6 @@ set wildignore+=*.jpg,*.png,*.bmp,*.ico
 set wildignore+=*.swp,*~
 
 
-
-
-
 "  different filetype different indentation
 " autocmd Filetype c,h setlocal noexpandtab tabstop=8 shiftwidth=8
 " autocmd Filetype cc,hh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
@@ -93,8 +90,10 @@ autocmd BufNewFile,BufRead *.cc,*.hh setlocal expandtab tabstop=2 shiftwidth=2 s
 
 " set different ycm_extra_conf.py for c and c++ source files
 " typically it should be let b:variable, but here is a exception.
-autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.c,*.h let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_c.py'
-autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.cc,*.hh let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf_cc.py'
+" Use Bear(Build ear) to generate compile_commands.json at project root, so no
+" more relative include path failure.
+autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.c,*.h let g:ycm_global_ycm_extra_conf = '/home/lorentz/.ycm_extra_conf_cx.py'
+autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.cc,*.hh let g:ycm_global_ycm_extra_conf = '/home/lorentz/.ycm_extra_conf_ccx.py'
 
 "  set to use github-flavored-markdown
 autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
