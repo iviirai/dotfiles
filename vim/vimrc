@@ -155,3 +155,6 @@ nmap ,r :IH<CR>
 "map of hex edit-function
 nmap ,g :%!xxd -r<CR>
 nmap ,h :%!xxd<CR>
+
+"makes <CR> work like Ctrl+y in popup menu
+:inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
