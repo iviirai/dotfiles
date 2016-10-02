@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'SirVer/ultisnips'
 " Plugin 'w0ng/vim-hybrid'
 " Plugin 'morhetz/gruvbox'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -27,11 +28,13 @@ Plugin 'jtratner/vim-flavored-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+filetype plugin on
 filetype plugin indent on    " required
 syntax on
 set background=dark
 colorscheme mongolia_night
 set number
+set shortmess+=c
 set laststatus=2
 let g:c_no_curly_error = 1 " do not tag {} as error in ()
 let g:cpp_class_scope_highlight = 1 " for vim-ccp-enhanced-highlight
