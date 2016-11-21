@@ -18,6 +18,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tpope/vim-fugitive'
 Plugin 'jtratner/vim-flavored-markdown'
+Plugin 'Yggdroot/indentLine'
 " Plugin 'w0ng/vim-hybrid'
 " Plugin 'morhetz/gruvbox'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -42,6 +43,10 @@ let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#close_symbol = ''
 let g:airline_theme = 'bubblegum'
+let g:indentLine_setConceal = 0
+let g:indentLine_setConceal = 1
+let g:indentLine_char = '|'
+
 " change airline symbols
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
@@ -51,12 +56,15 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_python_binary_path = '/usr/bin/python'
+let g:ycm_path_to_python_interpreter='/usr/bin/python'
 " no diagnostic information
 let g:ycm_enable_diagnostic_signs = 0
-" which filetype should turned on
+"for which filetype should YCM be turned on
 let g:ycm_filetype_whitelist = { 	
 	\ 'cpp': 1,
-	\ 'c': 1
+	\ 'c': 1,
+	\ 'python': 1
 	\}
 " set to 99, so identifier completion engine will not be triggered just 
 " leaves semantic engine. default is 2.
