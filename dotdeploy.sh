@@ -156,6 +156,11 @@ fi
 ###
 cp "$DIR"/compton.conf "$HOME"/.config/compton.conf
 
+###
+#  setup radare2
+###
+cp "$DIR"/radare2rc "$HOME"/.radare2rc
+
 
 ###
 #  setup ss
