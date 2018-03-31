@@ -5,16 +5,14 @@ import logging
 import ycm_core
 
 BASE_FLAGS = [
-    '-Wall',
-    '-Wextra',
     '-Werror',
     '-Wno-long-long',
     '-Wno-variadic-macros',
-    '-fexceptions',
+    '-Wno-int-to-pointer-cast',
     '-ferror-limit=10000',
-    '-DNDEBUG',
-    '-std=c++11',
-    '-xc++',
+    '-std=c99',
+    '-x',
+    'c',
     '-I/usr/lib/'
     '-I/usr/include/'
 ]
