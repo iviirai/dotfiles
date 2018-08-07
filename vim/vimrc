@@ -1,5 +1,6 @@
 set nocompatible
 set t_Co=256
+set encoding=utf-8
 filetype off
 
 " set the runtime path to include Vundle and initialize
@@ -37,6 +38,7 @@ colorscheme mongolia_night
 set number
 set shortmess+=c
 set laststatus=2
+set cscopetag              " use ctags instead of tags when perform C-]
 let g:c_no_curly_error = 1 " do not tag {} as error in ()
 let g:cpp_class_scope_highlight = 1 " for vim-ccp-enhanced-highlight
 let g:airline_powerline_fonts = 1
@@ -45,6 +47,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#close_symbol = ''
+" let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline_theme = 'bubblegum'
 let g:indentLine_setConceal = 1
 let g:indentLine_setColors = 0 " use color from colorscheme
@@ -60,6 +64,7 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+let g:airline_symbols.notexists = ''
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_python_binary_path = '/usr/bin/python'
 let g:ycm_path_to_python_interpreter='/usr/bin/python'
@@ -105,8 +110,8 @@ set cinoptions+=:0,g0,l1 "case/switch(C/C++) indent and publib/private/protected
 " typically it should be let b:variable, but here is a exception.
 " Use Bear(Build ear) to generate compile_commands.json at project root, so no
 " more relative include path failure.
-autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.c,*.h let g:ycm_global_ycm_extra_conf = '/home/lorentz/.ycm_extra_conf_cx.py'
-autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.cc,*.hh let g:ycm_global_ycm_extra_conf = '/home/lorentz/.ycm_extra_conf_ccx.py'
+autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.c,*.h let g:ycm_global_ycm_extra_conf = '$HOME/.ycm_extra_conf_cx.py'
+autocmd BufNewFile,BufRead,BufFilePost,BufEnter *.cc,*.hh let g:ycm_global_ycm_extra_conf = '$HOME/.ycm_extra_conf_ccx.py'
 
 "  set to use github-flavored-markdown
 autocmd BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
@@ -163,6 +168,11 @@ nmap ,a :A<CR>
 nmap ,w :IHV<CR>
 nmap ,e :IHS<CR>
 nmap ,r :IH<CR>
+
+"map of change shiftwidth to 2/4/8 spaces
+nmap ,2 :set sw=2<CR> gg=G<CR>
+nmap ,4 :set sw=4<CR> gg=G<CR>
+nmap ,8 :set sw=8<CR> gg=G<CR>
 
 
 "map of hex edit-function
