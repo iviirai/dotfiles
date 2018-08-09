@@ -182,3 +182,17 @@ if [[ -e "$HOME"/.shadowsocks.json ]]; then
 ###
 	su - root -c "cp "$DIR"/lightdm/monsterwm.desktop /usr/share/xgreeters/"
 	su - root -c "cp "$DIR"/lightdm/50-monsterwm.conf /etc/lightdm/lightdm.conf.d/"
+
+
+
+###
+#  setup qemu with user mode
+###
+	su - root -c "apt-get install qemu binfmt-support qemu-user-static"
+
+###
+#  setup pwntools and metaploit manually
+###
+
+	echo "Please setup pwntools and metaploit manually"
+
