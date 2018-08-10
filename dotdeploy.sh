@@ -196,3 +196,17 @@ if [[ -e "$HOME"/.shadowsocks.json ]]; then
 
 	echo "Please setup pwntools and metaploit manually"
 
+
+###
+#  search packages
+#
+#  install/downgrade page to specific version
+###
+	echo "[+] search packages:"
+	echo "sudo aptitude search <package_xyz>"
+	echo "[+] list all version of a package:"
+	echo "apt-cache showpkg <package_name>"
+	echo "[+] prevent package from upgrading:"
+	echo "apt-mark hold <package_name>"
+	echo "[+] install/downgrade specific version of package:"
+	echo "sudo apt-get install package_name=version"
