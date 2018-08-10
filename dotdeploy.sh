@@ -195,6 +195,8 @@ if [[ -e "$HOME"/.shadowsocks.json ]]; then
 ###
 
 	echo "Please setup pwntools and metaploit manually"
+	echo "install binutils for pwntools playing with different architectures"
+	echo "try: sudo apt-get install binutils-$ARCH-linux-gnu"
 
 
 ###
