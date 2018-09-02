@@ -212,3 +212,9 @@ if [[ -e "$HOME"/.shadowsocks.json ]]; then
 	echo "apt-mark hold <package_name>"
 	echo "[+] install/downgrade specific version of package:"
 	echo "sudo apt-get install package_name=version"
+
+
+###
+#  install bspwm
+#  cp bspwm/contrib/freedesktop/bspwm.desktop /usr/share/xsessions
+###
